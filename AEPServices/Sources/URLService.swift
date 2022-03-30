@@ -21,6 +21,9 @@ class URLService: URLOpening {
     /// - Parameter url: the url to open
     /// - Returns: true if have processed the open url action; otherwise you can override the `URLService` and return false for specific urls which not allowed to open
     @discardableResult func openUrl(_ url: URL) -> Bool {
+        #if BUILDING_FOR_APP_EXTENSION
+        return false
+        #else
         DispatchQueue.main.async {
             Log.trace(label: self.LOG_PREFIX, "Attempting to open URL: \(url)")
             UIApplication.shared.open(url) { success in
@@ -30,5 +33,6 @@ class URLService: URLOpening {
             }
         }
         return true
+        #endif
     }
 }
