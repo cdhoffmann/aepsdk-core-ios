@@ -116,9 +116,7 @@ public class FloatingButton: NSObject, FloatingButtonPresentable {
         }
 
         // view
-        #if !BUILDING_FOR_APP_EXTENSION
         let keyWindow = UIApplication.shared.getKeyWindow()
-        #endif
         if let buttonImageView = self.buttonImageView {
             keyWindow?.addSubview(buttonImageView)
             keyWindow?.bringSubviewToFront(buttonImageView)

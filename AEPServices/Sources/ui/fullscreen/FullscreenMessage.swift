@@ -16,7 +16,6 @@ import WebKit
 
 /// This class is used to create and display fullscreen messages on the current view.
 @objc(AEPFullscreenMessage)
-@available(iOSApplicationExtension, unavailable)
 public class FullscreenMessage: NSObject, FullscreenPresentable {
 
     let LOG_PREFIX = "FullscreenMessage"
@@ -285,29 +284,31 @@ public class FullscreenMessage: NSObject, FullscreenPresentable {
     }
 
     private func displayWithAnimation(webView: WKWebView) {
-        DispatchQueue.main.async {
-            let keyWindow = UIApplication.shared.getKeyWindow()
+        #if !BUILDING_FOR_APP_EXTENSION
+            DispatchQueue.main.async {
+                let keyWindow = UIApplication.shared.getKeyWindow()
 
-            if let animation = self.settings?.displayAnimation, animation != .none {
-                let isFade = animation == .fade
-                webView.alpha = isFade ? 0.0 : 1.0
-                if let bgView = self.transparentBackgroundView {
-                    bgView.addSubview(webView)
-                    bgView.backgroundColor = self.settings?.getBackgroundColor(opacity: 0.0)
-                    keyWindow?.addSubview(bgView)
+                if let animation = self.settings?.displayAnimation, animation != .none {
+                    let isFade = animation == .fade
+                    webView.alpha = isFade ? 0.0 : 1.0
+                    if let bgView = self.transparentBackgroundView {
+                        bgView.addSubview(webView)
+                        bgView.backgroundColor = self.settings?.getBackgroundColor(opacity: 0.0)
+                        keyWindow?.addSubview(bgView)
+                    } else {
+                        keyWindow?.addSubview(webView)
+                    }
+                    UIView.animate(withDuration: self.ANIMATION_DURATION, animations: {
+                        webView.frame = self.frameWhenVisible
+                        webView.alpha = 1.0
+                        self.transparentBackgroundView?.backgroundColor = self.settings?.getBackgroundColor()
+                    })
                 } else {
+                    webView.frame = self.frameWhenVisible
                     keyWindow?.addSubview(webView)
                 }
-                UIView.animate(withDuration: self.ANIMATION_DURATION, animations: {
-                    webView.frame = self.frameWhenVisible
-                    webView.alpha = 1.0
-                    self.transparentBackgroundView?.backgroundColor = self.settings?.getBackgroundColor()
-                })
-            } else {
-                webView.frame = self.frameWhenVisible
-                keyWindow?.addSubview(webView)
             }
-        }
+        #endif
     }
 
     private func dismissWithAnimation(shouldDeallocateWebView: Bool) {

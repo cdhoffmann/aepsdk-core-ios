@@ -13,13 +13,13 @@
 import Foundation
 import UIKit
 
-@available(iOSApplicationExtension, unavailable)
 @objc(AEPFloatingButtonPosition) public enum FloatingButtonPosition: Int {
 
     case center
     case topRight
     case topLeft
 
+    @available(iOSApplicationExtension, unavailable)
     internal func frame(screenBounds: CGSize) -> CGRect {
         switch self {
         case .center:

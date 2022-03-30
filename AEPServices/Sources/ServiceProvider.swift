@@ -31,11 +31,12 @@ public class ServiceProvider {
     private var overrideCacheService: Caching?
     private var defaultCacheService = DiskCacheService()
     private var overrideURLService: URLOpening?
-    private var defaultURLService = URLService()
     private var defaultLoggingService = LoggingService()
     private var overrideUIService: UIService?
-    private var defaultUIService = AEPUIService()
-
+    private var defaultURLService = URLService()
+    #if !BUILDING_FOR_APP_EXTENSION
+        private var defaultUIService = AEPUIService()
+    #endif
     // Don't allow init of ServiceProvider outside the class
     private init() {}
 
@@ -98,6 +99,12 @@ public class ServiceProvider {
         }
     }
 
+    public var loggingService: Logging {
+        return queue.sync {
+            return defaultLoggingService
+        }
+    }
+
     public var urlService: URLOpening {
         get {
             return queue.sync {
@@ -110,25 +117,21 @@ public class ServiceProvider {
             }
         }
     }
-
-    public var loggingService: Logging {
-        return queue.sync {
-            return defaultLoggingService
-        }
-    }
-
-    public var uiService: UIService {
-        get {
-            return queue.sync {
-                return overrideUIService ?? defaultUIService
+    
+    #if !BUILDING_FOR_APP_EXTENSION
+        public var uiService: UIService {
+            get {
+                return queue.sync {
+                    return overrideUIService ?? defaultUIService
+                }
+            }
+            set {
+                queue.async {
+                    self.overrideUIService = newValue
+                }
             }
         }
-        set {
-            queue.async {
-                self.overrideUIService = newValue
-            }
-        }
-    }
+    #endif
 
     internal func reset() {
         defaultSystemInfoService = ApplicationSystemInfoService()
@@ -136,9 +139,11 @@ public class ServiceProvider {
         defaultNetworkService = NetworkService()
         defaultDataQueueService = DataQueueService()
         defaultCacheService = DiskCacheService()
-        defaultURLService = URLService()
         defaultLoggingService = LoggingService()
-        defaultUIService = AEPUIService()
+        defaultURLService = URLService()
+        #if !BUILDING_FOR_APP_EXTENSION
+            defaultUIService = AEPUIService()
+        #endif
 
         overrideSystemInfoService = nil
         overrideKeyValueService = nil
