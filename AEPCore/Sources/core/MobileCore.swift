@@ -12,6 +12,7 @@
 
 import AEPServices
 import Foundation
+import UIKit
 
 /// Core extension for the Adobe Experience Platform SDK
 @objc(AEPMobileCore)
@@ -37,6 +38,38 @@ public final class MobileCore: NSObject {
 
     /// Pending extensions to be registered for legacy support
     static var pendingExtensions = ThreadSafeArray<Extension.Type>(identifier: "com.adobe.pendingExtensions.queue")
+    
+    @available(iOSApplicationExtension, unavailable)
+    @available(tvOSApplicationExtension, unavailable)
+    public static func start(with id: String, and options: CoreOptions) {
+        if let logLevel = options.logLevel {
+            setLogLevel(logLevel)
+        }
+        // Register Extensions, call configureWithAppId from callback
+        DispatchQueue.global().async {
+            let classList = ClassFinder.classes(conformToProtocol: Extension.self)
+            let filteredClassList = classList.filter { $0 !== AEPCore.EventHubPlaceholderExtension.self && $0 !== AEPCore.Configuration.self }.compactMap { $0 as? NSObject.Type }
+            registerExtensions(filteredClassList) {
+                configureWith(appId: id)
+                if let configUpdates = options.configUpdates {
+                    updateConfigurationWith(configDict: configUpdates)
+                }
+                
+                // If disableLifecycleStart flag is non nil and true, set lifecycle notification listeners
+                guard let disableAutoLifecycleTracking = options.disableAutoLifecycleTracking, disableAutoLifecycleTracking == true else {
+                    var usingSceneDelegate = false
+                    if #available(iOS 13.0, tvOS 13.0, *) {
+                        let sceneDelegateClasses = ClassFinder.classes(conformToProtocol: UIWindowSceneDelegate.self)
+                        if !sceneDelegateClasses.isEmpty {
+                            usingSceneDelegate = true
+                        }
+                    }
+                    setupLifecycle(usingSceneDelegate: usingSceneDelegate, additionalContextData: options.additionalContextData)
+                    return
+                }
+            }
+        }
+    }
 
     /// Registers the extensions with Core and begins event processing
     /// - Parameter extensions: The extensions to be registered
@@ -220,5 +253,63 @@ public final class MobileCore: NSObject {
         let eventData = [CoreConstants.Signal.EventDataKeys.CONTEXT_DATA: data]
         let event = Event(name: CoreConstants.EventNames.COLLECT_PII, type: EventType.genericPii, source: EventSource.requestContent, data: eventData)
         MobileCore.dispatch(event: event)
+    }
+    
+    @available(iOSApplicationExtension, unavailable)
+    @available(tvOSApplicationExtension, unavailable)
+    private static func setupLifecycle(usingSceneDelegate: Bool, additionalContextData: [String: Any]? = nil) {
+        if usingSceneDelegate {
+            self.lifecycleStart(additionalContextData: additionalContextData)
+            
+            if #available(iOS 13.0, tvOS 13.0, *) {
+                NotificationCenter.default.addObserver(forName: UIScene.willEnterForegroundNotification, object: nil, queue: nil) { _ in
+                    self.lifecycleStart(additionalContextData: additionalContextData)
+                }
+                NotificationCenter.default.addObserver(forName: UIScene.didEnterBackgroundNotification, object: nil, queue: nil) { _ in
+                    self.lifecyclePause()
+                }
+            }
+        } else {
+            if UIApplication.shared.applicationState != .background {
+                self.lifecycleStart(additionalContextData: additionalContextData)
+            }
+            NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil) { _ in
+                self.lifecycleStart(additionalContextData: additionalContextData)
+            }
+            NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { _ in
+                self.lifecyclePause()
+            }
+        }
+    }
+}
+
+// Used to test that extension with no calls to it, can still be found with the ClassFinder
+class SampleExtension: NSObject, Extension {
+    var name: String
+    
+    var friendlyName: String
+    
+    static var extensionVersion: String = "1.0.0"
+    
+    var metadata: [String: String]?
+    
+    var runtime: ExtensionRuntime
+    
+    func readyForEvent(_ event: Event) -> Bool {
+        return true
+    }
+    
+    func onRegistered() {
+        
+    }
+    
+    func onUnregistered() {
+        
+    }
+    
+    required init?(runtime: ExtensionRuntime) {
+        self.name = "com.adobe.sampleExtension"
+        self.friendlyName = "SampleExtension"
+        self.runtime = runtime
     }
 }
