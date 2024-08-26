@@ -112,6 +112,7 @@ public enum DeviceType {
     case PAD
     case TV
     case CARPLAY
+    case VISION
     case UNKNOWN
 }
 

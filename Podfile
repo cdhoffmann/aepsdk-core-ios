@@ -10,32 +10,32 @@ pod 'SwiftLint', '0.52.0'
 
 def core_main
   project 'AEPCore.xcodeproj'
-  pod 'AEPRulesEngine', :git => 'https://github.com/adobe/aepsdk-rulesengine-ios.git', :branch => 'main'
+  pod 'AEPRulesEngine', :path => '~/code/MobileSDK/Forks/aepsdk-rulesengine-ios/'
 end
 
 def core_staging
   project 'AEPCore.xcodeproj'
-  pod 'AEPRulesEngine', :git => 'https://github.com/adobe/aepsdk-rulesengine-ios.git', :branch => 'staging'
+  pod 'AEPRulesEngine', :path => '~/code/MobileSDK/Forks/aepsdk-rulesengine-ios/'
 end
 
 def core_dev
   project 'AEPCore.xcodeproj'
-  pod 'AEPRulesEngine', :git => 'https://github.com/adobe/aepsdk-rulesengine-ios.git', :branch => 'dev-v5.0.0'
+  pod 'AEPRulesEngine', :path => '~/code/MobileSDK/Forks/aepsdk-rulesengine-ios/'
 end
 
 def testapp_main
   project 'TestApps/AEPCoreTestApp.xcodeproj'
-  pod 'AEPRulesEngine', :git => 'https://github.com/adobe/aepsdk-rulesengine-ios.git', :branch => 'main'
+  pod 'AEPRulesEngine', :path => '~/code/MobileSDK/Forks/aepsdk-rulesengine-ios/'
 end
 
 def testapp_staging
   project 'TestApps/AEPCoreTestApp.xcodeproj'
-  pod 'AEPRulesEngine', :git => 'https://github.com/adobe/aepsdk-rulesengine-ios.git', :branch => 'staging'
+  pod 'AEPRulesEngine', :path => '~/code/MobileSDK/Forks/aepsdk-rulesengine-ios/'
 end
 
 def testapp_dev
   project 'TestApps/AEPCoreTestApp.xcodeproj'
-  pod 'AEPRulesEngine', :git => 'https://github.com/adobe/aepsdk-rulesengine-ios.git', :branch => 'dev-v5.0.0'
+  pod 'AEPRulesEngine', :path => '~/code/MobileSDK/Forks/aepsdk-rulesengine-ios/'
 end
 
 target 'AEPCore' do
@@ -92,12 +92,20 @@ target 'TestApp_Objc (tvOS)' do
   testapp_main
 end
 
+target 'TestApp_Vision' do
+  testapp_main
+end
+
+target 'Test_VisionPro' do
+  testapp_main
+end
+
 post_install do |pi|
   pi.pods_project.targets.each do |t|
     t.build_configurations.each do |bc|
         bc.build_settings['TVOS_DEPLOYMENT_TARGET'] = '12.0'
-        bc.build_settings['SUPPORTED_PLATFORMS'] = 'iphoneos iphonesimulator appletvos appletvsimulator'
-        bc.build_settings['TARGETED_DEVICE_FAMILY'] = "1,2,3"
+        bc.build_settings['SUPPORTED_PLATFORMS'] = 'iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator'
+        bc.build_settings['TARGETED_DEVICE_FAMILY'] = "1,2,3,7"
     end
   end
 end

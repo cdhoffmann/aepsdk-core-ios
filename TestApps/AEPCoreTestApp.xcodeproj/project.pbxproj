@@ -22,6 +22,24 @@
 		3FB58F92252CE33B009C1358 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB58F90252CE33B009C1358 /* LaunchScreen.storyboard */; };
 		3FB58FA7252CFFD4009C1358 /* MyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB58FA6252CFFD4009C1358 /* MyExtension.swift */; };
 		64D7D66F6425325D4D459EED /* Pods_TestApp_Swift__tvOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25A64F5BA85E21A5C27FD87 /* Pods_TestApp_Swift__tvOS_.framework */; };
+		754618C82C7CF20200512FFC /* AEPCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7546ED292C7CEAFA006B320A /* AEPCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		754618EB2C7D07AB00512FFC /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 754618EA2C7D07AB00512FFC /* RealityKitContent */; };
+		754618ED2C7D07AB00512FFC /* Test_VisionProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754618EC2C7D07AB00512FFC /* Test_VisionProApp.swift */; };
+		754618EF2C7D07AB00512FFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754618EE2C7D07AB00512FFC /* ContentView.swift */; };
+		754618F12C7D07AB00512FFC /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754618F02C7D07AB00512FFC /* ImmersiveView.swift */; };
+		754618F32C7D07AC00512FFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754618F22C7D07AC00512FFC /* Assets.xcassets */; };
+		754618F62C7D07AC00512FFC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754618F52C7D07AC00512FFC /* Preview Assets.xcassets */; };
+		754619002C7D084D00512FFC /* AEPCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754618FB2C7D084D00512FFC /* AEPCore.framework */; };
+		754619012C7D084D00512FFC /* AEPCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 754618FB2C7D084D00512FFC /* AEPCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		754619022C7D084D00512FFC /* AEPIdentity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754618FC2C7D084D00512FFC /* AEPIdentity.framework */; };
+		754619032C7D084D00512FFC /* AEPIdentity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 754618FC2C7D084D00512FFC /* AEPIdentity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		754619042C7D084D00512FFC /* AEPLifecycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754618FD2C7D084D00512FFC /* AEPLifecycle.framework */; };
+		754619052C7D084D00512FFC /* AEPLifecycle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 754618FD2C7D084D00512FFC /* AEPLifecycle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		754619062C7D084D00512FFC /* AEPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754618FE2C7D084D00512FFC /* AEPServices.framework */; };
+		754619072C7D084D00512FFC /* AEPServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 754618FE2C7D084D00512FFC /* AEPServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		754619082C7D084D00512FFC /* AEPSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754618FF2C7D084D00512FFC /* AEPSignal.framework */; };
+		754619092C7D084D00512FFC /* AEPSignal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 754618FF2C7D084D00512FFC /* AEPSignal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7546190B2C7D097D00512FFC /* RealityKitContent in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 757213952C7536A40057EAFE /* RealityKitContent */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		780888B526D56F3800F5A665 /* LifecycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780888A626D56F3800F5A665 /* LifecycleView.swift */; };
 		780888B626D56F3800F5A665 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780888A726D56F3800F5A665 /* MenuView.swift */; };
 		780888B726D56F3800F5A665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780888A826D56F3800F5A665 /* AppDelegate.swift */; };
@@ -39,7 +57,6 @@
 		786D631326D6C7F8000828FC /* AEPIdentity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786D631226D6C7F8000828FC /* AEPIdentity.framework */; };
 		786D631426D6C7F8000828FC /* AEPIdentity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 786D631226D6C7F8000828FC /* AEPIdentity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		786D640626D6D5F0000828FC /* AEPCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786D640526D6D5F0000828FC /* AEPCore.framework */; };
-		786D640726D6D5F0000828FC /* AEPCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 786D640526D6D5F0000828FC /* AEPCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		786D640B26D6D5F5000828FC /* AEPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786D640A26D6D5F5000828FC /* AEPServices.framework */; };
 		786D640C26D6D5F5000828FC /* AEPServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 786D640A26D6D5F5000828FC /* AEPServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		786D64F826D6FAEC000828FC /* AEPCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786D64F726D6FAEC000828FC /* AEPCore.framework */; };
@@ -100,6 +117,7 @@
 		78F2E317280F719D0073CE00 /* AEPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F2E310280F719C0073CE00 /* AEPServices.framework */; };
 		78F2E318280F719D0073CE00 /* AEPServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78F2E310280F719C0073CE00 /* AEPServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A08C6747E305D5BF9CE2A3D /* Pods_TestApp_Objc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B889355E99E7CE85BE01DA34 /* Pods_TestApp_Objc.framework */; };
+		98BD3CA5D2A10381110CF3FD /* Pods_Test_VisionPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB142C85B7CA018FC5DCBEE /* Pods_Test_VisionPro.framework */; };
 		9F65FBBE14E3EB518B8FA743 /* Pods_TestApp_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148E88836D30DB0A4542D6F1 /* Pods_TestApp_Swift.framework */; };
 		B784FED2B823BE1487A956C9 /* Pods_TestAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F917DDAA83CF54D6804B96 /* Pods_TestAppExtension.framework */; };
 		BBF55F53251E494D00CAAC53 /* E2ETestingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF55F52251E494D00CAAC53 /* E2ETestingUITests.swift */; };
@@ -165,13 +183,29 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7546190A2C7D084D00512FFC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7546190B2C7D097D00512FFC /* RealityKitContent in Embed Frameworks */,
+				754619052C7D084D00512FFC /* AEPLifecycle.framework in Embed Frameworks */,
+				754619012C7D084D00512FFC /* AEPCore.framework in Embed Frameworks */,
+				754619032C7D084D00512FFC /* AEPIdentity.framework in Embed Frameworks */,
+				754619072C7D084D00512FFC /* AEPServices.framework in Embed Frameworks */,
+				754619092C7D084D00512FFC /* AEPSignal.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		786D630C26D6C7DA000828FC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				786D640726D6D5F0000828FC /* AEPCore.framework in Embed Frameworks */,
+				754618C82C7CF20200512FFC /* AEPCore.framework in Embed Frameworks */,
 				786D631426D6C7F8000828FC /* AEPIdentity.framework in Embed Frameworks */,
 				786D630B26D6C7DA000828FC /* AEPLifecycle.framework in Embed Frameworks */,
 				786D640C26D6D5F5000828FC /* AEPServices.framework in Embed Frameworks */,
@@ -247,7 +281,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00E0E3C63AD726F8875C10D1 /* Pods_TestApp_Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp_Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B40ACDB3E32F5EECEFCC79 /* Pods-TestApp_Objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp_Objc.release.xcconfig"; path = "Target Support Files/Pods-TestApp_Objc/Pods-TestApp_Objc.release.xcconfig"; sourceTree = "<group>"; };
+		06B13D1BB4470BAEA27E0696 /* Pods-TestApp_Vision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp_Vision.release.xcconfig"; path = "Target Support Files/Pods-TestApp_Vision/Pods-TestApp_Vision.release.xcconfig"; sourceTree = "<group>"; };
+		07247A396CB49710B6DA513D /* Pods-TestApp_Vision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp_Vision.debug.xcconfig"; path = "Target Support Files/Pods-TestApp_Vision/Pods-TestApp_Vision.debug.xcconfig"; sourceTree = "<group>"; };
 		148E88836D30DB0A4542D6F1 /* Pods_TestApp_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22024ADFC49796286A9CB8ED /* Pods_E2E_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E2E_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C00484C92FF17D160673BA /* Pods_TestApp_Objc__tvOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp_Objc__tvOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +309,7 @@
 		3FB58F91252CE33B009C1358 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FB58F93252CE33B009C1358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FB58FA6252CFFD4009C1358 /* MyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyExtension.swift; sourceTree = "<group>"; };
+		4B869C300CE98C5D7D96DE91 /* Pods-Test_VisionPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_VisionPro.debug.xcconfig"; path = "Target Support Files/Pods-Test_VisionPro/Pods-Test_VisionPro.debug.xcconfig"; sourceTree = "<group>"; };
 		668E1C5D1D43E52291678320 /* Pods-TestApp_Swift (tvOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp_Swift (tvOS).debug.xcconfig"; path = "Target Support Files/Pods-TestApp_Swift (tvOS)/Pods-TestApp_Swift (tvOS).debug.xcconfig"; sourceTree = "<group>"; };
 		68B4E5CD2C3029AAC670676E /* Pods-TestApp_Objc (tvOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp_Objc (tvOS).release.xcconfig"; path = "Target Support Files/Pods-TestApp_Objc (tvOS)/Pods-TestApp_Objc (tvOS).release.xcconfig"; sourceTree = "<group>"; };
 		68C6A2805E015B5EAEC88EB9 /* Pods-TestApp_Objc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp_Objc.debug.xcconfig"; path = "Target Support Files/Pods-TestApp_Objc/Pods-TestApp_Objc.debug.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +321,40 @@
 		754508952ADDD3F000865E75 /* AEPLifecycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPLifecycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		754508962ADDD3F000865E75 /* AEPServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7545089D2ADDD3F800865E75 /* AEPSignal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPSignal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		754618D22C7CF32400512FFC /* AEPCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		754618D52C7CF32F00512FFC /* AEPIdentity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPIdentity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		754618D82C7CF33500512FFC /* AEPLifecycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPLifecycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		754618DB2C7CF33B00512FFC /* AEPServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		754618DE2C7CF34100512FFC /* AEPSignal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPSignal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		754618E82C7D07AA00512FFC /* Test_VisionPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_VisionPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		754618EC2C7D07AB00512FFC /* Test_VisionProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_VisionProApp.swift; sourceTree = "<group>"; };
+		754618EE2C7D07AB00512FFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		754618F02C7D07AB00512FFC /* ImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
+		754618F22C7D07AC00512FFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		754618F52C7D07AC00512FFC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		754618F72C7D07AC00512FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		754618FB2C7D084D00512FFC /* AEPCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		754618FC2C7D084D00512FFC /* AEPIdentity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPIdentity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		754618FD2C7D084D00512FFC /* AEPLifecycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPLifecycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		754618FE2C7D084D00512FFC /* AEPServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		754618FF2C7D084D00512FFC /* AEPSignal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPSignal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7546ED292C7CEAFA006B320A /* AEPCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7546ED2C2C7CEB82006B320A /* AEPIdentity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPIdentity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7546ED2F2C7CEB89006B320A /* AEPLifecycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPLifecycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7546ED322C7CEB8E006B320A /* AEPServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7546ED352C7CEB96006B320A /* AEPSignal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPSignal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		757213952C7536A40057EAFE /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		757213982C7536A40057EAFE /* TestApp_VisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApp_VisionApp.swift; sourceTree = "<group>"; };
+		7572139A2C7536A40057EAFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7572139C2C7536A60057EAFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7572139F2C7536A60057EAFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		757213A12C7536A60057EAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		757213A52C7538280057EAFE /* AEPCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		757213A92C75382E0057EAFE /* AEPIdentity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPIdentity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		757213AC2C7538340057EAFE /* AEPLifecycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPLifecycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		757213AF2C7538660057EAFE /* AEPServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		757213B22C75386C0057EAFE /* AEPSignal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPSignal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		757213B52C7CE41D0057EAFE /* RealityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealityKit.framework; path = Platforms/XROS.platform/Developer/SDKs/XROS1.2.sdk/System/Library/Frameworks/RealityKit.framework; sourceTree = DEVELOPER_DIR; };
 		7808888026D56E8700F5A665 /* TestApp_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		780888A626D56F3800F5A665 /* LifecycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifecycleView.swift; sourceTree = "<group>"; };
 		780888A726D56F3800F5A665 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -340,12 +412,14 @@
 		78F2E30F280F719C0073CE00 /* AEPLifecycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPLifecycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F2E310280F719C0073CE00 /* AEPServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEPServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7DE4F25CF6562ED5EA98EC /* Pods-TestApp_Swift (tvOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp_Swift (tvOS).release.xcconfig"; path = "Target Support Files/Pods-TestApp_Swift (tvOS)/Pods-TestApp_Swift (tvOS).release.xcconfig"; sourceTree = "<group>"; };
+		7AB142C85B7CA018FC5DCBEE /* Pods_Test_VisionPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_VisionPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85165225B3B3ADF492F246FB /* Pods-TestApp_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp_Swift.debug.xcconfig"; path = "Target Support Files/Pods-TestApp_Swift/Pods-TestApp_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		85706A036E6FEF709B34873D /* Pods-TestApp_Objc (tvOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp_Objc (tvOS).debug.xcconfig"; path = "Target Support Files/Pods-TestApp_Objc (tvOS)/Pods-TestApp_Objc (tvOS).debug.xcconfig"; sourceTree = "<group>"; };
 		8DD57656B2661DC8D3B4EB5D /* Pods-TestAppExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAppExtension.release.xcconfig"; path = "Target Support Files/Pods-TestAppExtension/Pods-TestAppExtension.release.xcconfig"; sourceTree = "<group>"; };
 		9E695D276A2D5CA7797EF41F /* Pods-PerformanceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerformanceApp.debug.xcconfig"; path = "Target Support Files/Pods-PerformanceApp/Pods-PerformanceApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B25A64F5BA85E21A5C27FD87 /* Pods_TestApp_Swift__tvOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp_Swift__tvOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B889355E99E7CE85BE01DA34 /* Pods_TestApp_Objc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp_Objc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAF82D03567C6CD50A1728EE /* Pods-Test_VisionPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_VisionPro.release.xcconfig"; path = "Target Support Files/Pods-Test_VisionPro/Pods-Test_VisionPro.release.xcconfig"; sourceTree = "<group>"; };
 		BBF55F4E251E494D00CAAC53 /* E2E_SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = E2E_SwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF55F52251E494D00CAAC53 /* E2ETestingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2ETestingUITests.swift; sourceTree = "<group>"; };
 		BBF55F54251E494D00CAAC53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -386,6 +460,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9ECB06DBF3756046EDED3F4 /* Pods_E2E_Swift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		754618E52C7D07AA00512FFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				754618EB2C7D07AB00512FFC /* RealityKitContent in Frameworks */,
+				754619062C7D084D00512FFC /* AEPServices.framework in Frameworks */,
+				754619002C7D084D00512FFC /* AEPCore.framework in Frameworks */,
+				754619022C7D084D00512FFC /* AEPIdentity.framework in Frameworks */,
+				754619082C7D084D00512FFC /* AEPSignal.framework in Frameworks */,
+				754619042C7D084D00512FFC /* AEPLifecycle.framework in Frameworks */,
+				98BD3CA5D2A10381110CF3FD /* Pods_Test_VisionPro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +563,9 @@
 				3FAD091125267460000D207D /* TestApp_Objc */,
 				7808888126D56E8700F5A665 /* TestApp_Swift */,
 				78F2E2FD280F6DED0073CE00 /* TestAppExtension */,
+				757213932C7536A40057EAFE /* TestApp_Vision */,
+				754618E92C7D07AB00512FFC /* TestApp_VisionPro */,
+				757213942C7536A40057EAFE /* Packages */,
 				3F912D9D24E1A75C00E2AC84 /* Products */,
 				786D629D26D69E94000828FC /* Frameworks */,
 				78D6683472AF314ED5C05DD5 /* Pods */,
@@ -493,6 +584,7 @@
 				78F2E2FA280F6DEC0073CE00 /* TestAppExtension.appex */,
 				78A26DA3284A9C9F004A91B9 /* TestApp_Objc (tvOS).app */,
 				78A26DBC284A9CB7004A91B9 /* TestApp_Swift (tvOS).app */,
+				754618E82C7D07AA00512FFC /* Test_VisionPro.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -526,6 +618,55 @@
 				3FB58F93252CE33B009C1358 /* Info.plist */,
 			);
 			path = E2E_Swift;
+			sourceTree = "<group>";
+		};
+		754618E92C7D07AB00512FFC /* TestApp_VisionPro */ = {
+			isa = PBXGroup;
+			children = (
+				754618EC2C7D07AB00512FFC /* Test_VisionProApp.swift */,
+				754618EE2C7D07AB00512FFC /* ContentView.swift */,
+				754618F02C7D07AB00512FFC /* ImmersiveView.swift */,
+				754618F22C7D07AC00512FFC /* Assets.xcassets */,
+				754618F72C7D07AC00512FFC /* Info.plist */,
+				754618F42C7D07AC00512FFC /* Preview Content */,
+			);
+			path = TestApp_VisionPro;
+			sourceTree = "<group>";
+		};
+		754618F42C7D07AC00512FFC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				754618F52C7D07AC00512FFC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		757213932C7536A40057EAFE /* TestApp_Vision */ = {
+			isa = PBXGroup;
+			children = (
+				757213982C7536A40057EAFE /* TestApp_VisionApp.swift */,
+				7572139A2C7536A40057EAFE /* ContentView.swift */,
+				7572139C2C7536A60057EAFE /* Assets.xcassets */,
+				757213A12C7536A60057EAFE /* Info.plist */,
+				7572139E2C7536A60057EAFE /* Preview Content */,
+			);
+			path = TestApp_Vision;
+			sourceTree = "<group>";
+		};
+		757213942C7536A40057EAFE /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				757213952C7536A40057EAFE /* RealityKitContent */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		7572139E2C7536A60057EAFE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7572139F2C7536A60057EAFE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		7808888126D56E8700F5A665 /* TestApp_Swift */ = {
@@ -566,6 +707,27 @@
 		786D629D26D69E94000828FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				754618FB2C7D084D00512FFC /* AEPCore.framework */,
+				754618FC2C7D084D00512FFC /* AEPIdentity.framework */,
+				754618FD2C7D084D00512FFC /* AEPLifecycle.framework */,
+				754618FE2C7D084D00512FFC /* AEPServices.framework */,
+				754618FF2C7D084D00512FFC /* AEPSignal.framework */,
+				754618DE2C7CF34100512FFC /* AEPSignal.framework */,
+				754618DB2C7CF33B00512FFC /* AEPServices.framework */,
+				754618D82C7CF33500512FFC /* AEPLifecycle.framework */,
+				754618D52C7CF32F00512FFC /* AEPIdentity.framework */,
+				754618D22C7CF32400512FFC /* AEPCore.framework */,
+				7546ED352C7CEB96006B320A /* AEPSignal.framework */,
+				7546ED322C7CEB8E006B320A /* AEPServices.framework */,
+				7546ED2F2C7CEB89006B320A /* AEPLifecycle.framework */,
+				7546ED2C2C7CEB82006B320A /* AEPIdentity.framework */,
+				7546ED292C7CEAFA006B320A /* AEPCore.framework */,
+				757213B52C7CE41D0057EAFE /* RealityKit.framework */,
+				757213B22C75386C0057EAFE /* AEPSignal.framework */,
+				757213AF2C7538660057EAFE /* AEPServices.framework */,
+				757213AC2C7538340057EAFE /* AEPLifecycle.framework */,
+				757213A92C75382E0057EAFE /* AEPIdentity.framework */,
+				757213A52C7538280057EAFE /* AEPCore.framework */,
 				7545089D2ADDD3F800865E75 /* AEPSignal.framework */,
 				754508942ADDD3F000865E75 /* AEPIdentity.framework */,
 				754508952ADDD3F000865E75 /* AEPLifecycle.framework */,
@@ -611,6 +773,8 @@
 				73F917DDAA83CF54D6804B96 /* Pods_TestAppExtension.framework */,
 				36C00484C92FF17D160673BA /* Pods_TestApp_Objc__tvOS_.framework */,
 				B25A64F5BA85E21A5C27FD87 /* Pods_TestApp_Swift__tvOS_.framework */,
+				00E0E3C63AD726F8875C10D1 /* Pods_TestApp_Vision.framework */,
+				7AB142C85B7CA018FC5DCBEE /* Pods_Test_VisionPro.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -652,6 +816,10 @@
 				68B4E5CD2C3029AAC670676E /* Pods-TestApp_Objc (tvOS).release.xcconfig */,
 				668E1C5D1D43E52291678320 /* Pods-TestApp_Swift (tvOS).debug.xcconfig */,
 				7A7DE4F25CF6562ED5EA98EC /* Pods-TestApp_Swift (tvOS).release.xcconfig */,
+				07247A396CB49710B6DA513D /* Pods-TestApp_Vision.debug.xcconfig */,
+				06B13D1BB4470BAEA27E0696 /* Pods-TestApp_Vision.release.xcconfig */,
+				4B869C300CE98C5D7D96DE91 /* Pods-Test_VisionPro.debug.xcconfig */,
+				BAF82D03567C6CD50A1728EE /* Pods-Test_VisionPro.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -751,6 +919,29 @@
 			name = E2E_Swift;
 			productName = E2E_Swift;
 			productReference = 3FB58F83252CE33A009C1358 /* E2E_Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		754618E72C7D07AA00512FFC /* Test_VisionPro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 754618F82C7D07AC00512FFC /* Build configuration list for PBXNativeTarget "Test_VisionPro" */;
+			buildPhases = (
+				CA4F2227568201C017E39BEE /* [CP] Check Pods Manifest.lock */,
+				754618E42C7D07AA00512FFC /* Sources */,
+				754618E52C7D07AA00512FFC /* Frameworks */,
+				754618E62C7D07AA00512FFC /* Resources */,
+				7546190A2C7D084D00512FFC /* Embed Frameworks */,
+				C2D58C5530AE56EE7E819FB9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Test_VisionPro;
+			packageProductDependencies = (
+				754618EA2C7D07AB00512FFC /* RealityKitContent */,
+			);
+			productName = Test_VisionPro;
+			productReference = 754618E82C7D07AA00512FFC /* Test_VisionPro.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7808887F26D56E8700F5A665 /* TestApp_Swift */ = {
@@ -896,7 +1087,7 @@
 		3F912D9424E1A75C00E2AC84 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = Adobe;
 				TargetAttributes = {
@@ -905,6 +1096,9 @@
 					};
 					3FB58F82252CE33A009C1358 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					754618E72C7D07AA00512FFC = {
+						CreatedOnToolsVersion = 15.4;
 					};
 					7808887F26D56E8700F5A665 = {
 						CreatedOnToolsVersion = 12.3;
@@ -954,6 +1148,7 @@
 				78F2E2F9280F6DEC0073CE00 /* TestAppExtension */,
 				78A26DA2284A9C9F004A91B9 /* TestApp_Objc (tvOS) */,
 				78A26DBB284A9CB7004A91B9 /* TestApp_Swift (tvOS) */,
+				754618E72C7D07AA00512FFC /* Test_VisionPro */,
 			);
 		};
 /* End PBXProject section */
@@ -976,6 +1171,15 @@
 				3FB58F92252CE33B009C1358 /* LaunchScreen.storyboard in Resources */,
 				3FB58F8F252CE33B009C1358 /* Assets.xcassets in Resources */,
 				3FB58F8D252CE33A009C1358 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		754618E62C7D07AA00512FFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				754618F62C7D07AC00512FFC /* Preview Assets.xcassets in Resources */,
+				754618F32C7D07AC00512FFC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1203,6 +1407,45 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C2D58C5530AE56EE7E819FB9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test_VisionPro/Pods-Test_VisionPro-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test_VisionPro/Pods-Test_VisionPro-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test_VisionPro/Pods-Test_VisionPro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA4F2227568201C017E39BEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test_VisionPro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DD1EA32603D2E09F32FB0809 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1319,6 +1562,16 @@
 				3FB58F8A252CE33A009C1358 /* ViewController.swift in Sources */,
 				3FB58F86252CE33A009C1358 /* AppDelegate.swift in Sources */,
 				3FB58FA7252CFFD4009C1358 /* MyExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		754618E42C7D07AA00512FFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				754618EF2C7D07AB00512FFC /* ContentView.swift in Sources */,
+				754618ED2C7D07AB00512FFC /* Test_VisionProApp.swift in Sources */,
+				754618F12C7D07AB00512FFC /* ImmersiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1673,6 +1926,75 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		754618F92C7D07AC00512FFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B869C300CE98C5D7D96DE91 /* Pods-Test_VisionPro.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Test_VisionPro/Preview Content\"";
+				DEVELOPMENT_TEAM = FKGEE875K4;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Test-VisionPro";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.2;
+			};
+			name = Debug;
+		};
+		754618FA2C7D07AC00512FFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAF82D03567C6CD50A1728EE /* Pods-Test_VisionPro.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Test_VisionPro/Preview Content\"";
+				DEVELOPMENT_TEAM = FKGEE875K4;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Test-VisionPro";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.2;
 			};
 			name = Release;
 		};
@@ -2069,6 +2391,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		754618F82C7D07AC00512FFC /* Build configuration list for PBXNativeTarget "Test_VisionPro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				754618F92C7D07AC00512FFC /* Debug */,
+				754618FA2C7D07AC00512FFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7808889126D56E8E00F5A665 /* Build configuration list for PBXNativeTarget "TestApp_Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2133,6 +2464,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		754618EA2C7D07AB00512FFC /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3F912D9424E1A75C00E2AC84 /* Project object */;
 }
