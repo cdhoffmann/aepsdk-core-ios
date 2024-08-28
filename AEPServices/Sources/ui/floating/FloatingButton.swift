@@ -9,7 +9,7 @@
  OF ANY KIND, either express or implied. See the License for the specific language
  governing permissions and limitations under the License.
  */
-#if os(iOS)
+#if os(iOS) || os(visionOS)
     import Foundation
     import UIKit
 
@@ -50,7 +50,9 @@
                 }
 
                 self.timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.bringFloatingButtonToFront), userInfo: nil, repeats: true)
+                #if os(iOS)
                 NotificationCenter.default.addObserver(self, selector: #selector(self.handleDeviceRotation), name: UIDevice.orientationDidChangeNotification, object: nil)
+                #endif
             }
         }
 

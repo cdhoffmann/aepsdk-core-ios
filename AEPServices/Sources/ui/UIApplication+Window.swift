@@ -9,13 +9,18 @@
  OF ANY KIND, either express or implied. See the License for the specific language
  governing permissions and limitations under the License.
  */
-#if os(iOS)
+#if os(iOS) || os(visionOS)
     import Foundation
     import UIKit
 
     internal extension UIApplication {
         func getKeyWindow() -> UIWindow? {
+            #if os(iOS)
             keyWindow ?? windows.first
+            #elseif os(visionOS)
+            // TODO: - look into how to get the keywindow for visionpro, this is just a rough draft
+            UIApplication.shared.connectedScenes.compactMap { ($0 as? UIWindowScene)?.keyWindow}.first
+            #endif
         }
     }
 #endif

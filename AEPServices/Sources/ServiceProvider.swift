@@ -18,7 +18,7 @@ import Foundation
 public class ServiceProvider {
     public static let shared = ServiceProvider()
 
-    #if os(iOS)
+    #if os(iOS) || os(visionOS)
         /// MessagingDelegate which is used to listen for message visibility updates.
         public weak var messagingDelegate: MessagingDelegate?
     #endif
@@ -149,7 +149,7 @@ extension ServiceProvider {
     private struct Holder {
         static var overrideURLService: URLOpening?
         static var defaultURLService = URLService()
-        #if os(iOS)
+        #if os(iOS) || os(visionOS)
             static var overrideUIService: UIService?
             static var defaultUIService = AEPUIService()
         #endif
@@ -168,7 +168,7 @@ extension ServiceProvider {
         }
     }
 
-    #if os(iOS)
+    #if os(iOS) || os(visionOS)
         public var uiService: UIService {
             get {
                 return queue.sync {
@@ -187,7 +187,7 @@ extension ServiceProvider {
         queue.async {
             Holder.defaultURLService = URLService()
             Holder.overrideURLService = nil
-            #if os(iOS)
+            #if os(iOS) || os(visionOS)
                 Holder.defaultUIService = AEPUIService()
                 Holder.overrideUIService = nil
             #endif

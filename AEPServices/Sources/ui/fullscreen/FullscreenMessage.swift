@@ -10,7 +10,7 @@
  governing permissions and limitations under the License.
  */
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
     import Foundation
     import UIKit
     import WebKit
@@ -119,7 +119,7 @@
             }
 
             DispatchQueue.main.async {
-
+                #if os(iOS)
                 // add observer to handle device rotation
                 if !self.observerSet {
                     NotificationCenter.default.addObserver(self,
@@ -128,6 +128,7 @@
                                                            object: nil)
                     self.observerSet = true
                 }
+                #endif
 
                 // create the webview
                 let wkWebView = self.getConfiguredWebView(newFrame: self.frameBeforeShow)
@@ -175,7 +176,8 @@
                 self.handleShouldShow(webview: wkWebView, delegateControl: delegateControl)
             }
         }
-
+        
+        #if os(iOS)
         @objc private func handleDeviceRotation(notification: NSNotification) {
             DispatchQueue.main.async {
                 if self.transparentBackgroundView != nil {
@@ -184,6 +186,7 @@
                 self.webView?.frame = self.frameWhenVisible
             }
         }
+        #endif
 
         private func handleShouldShow(webview: WKWebView, delegateControl: Bool) {
             // get off main thread while delegate has control to prevent pause on main thread
