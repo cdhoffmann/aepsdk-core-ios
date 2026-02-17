@@ -37,6 +37,12 @@ struct ConfigurationConstants {
         static let EXPERIENCE_CLOUD_ORGID = "experienceCloud.org"
         static let EXPERIENCE_CLOUD_SERVER = "experienceCloud.server"
         static let RULES_URL = "rules.url"
+        
+        // Intelligence configuration keys
+        static let INTELLIGENCE_ENABLED = "intelligence.enabled"
+        static let INTELLIGENCE_DOMAIN = "intelligence.domain"
+        static let INTELLIGENCE_EVENT_TYPES = "intelligence.eventTypes"
+        static let INTELLIGENCE_PROVIDER = "intelligence.provider"
     }
 
     struct DataStoreKeys {

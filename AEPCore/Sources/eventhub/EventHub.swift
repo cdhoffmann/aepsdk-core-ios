@@ -35,6 +35,8 @@ final class EventHub {
     private var preprocessors = ThreadSafeArray<EventPreprocessor>(identifier: "com.adobe.eventHub.preprocessors.queue")
     private var started = false // true if the `EventHub` is started, false otherwise. Should only be accessed from within the `eventHubQueue`
     private var eventHistory: EventHistoryProvider?
+    private var intelligenceEventHistory: IntelligenceEventHistory?
+    private let intelligencePreprocessor = IntelligencePreprocessor()
     private var wrapperType: WrapperType = .none
     #if DEBUG
         public internal(set) static var shared = EventHub()
@@ -53,9 +55,15 @@ final class EventHub {
     /// In production implementations of the SDK, use the convenience `init()` method instead.
     init(eventHistory: EventHistoryProvider? = nil) {
         initEventHistory(eventHistory)
+        
+        // Initialize intelligence event history and connect to preprocessor
+        initIntelligenceEventHistory()
 
         // setup a place-holder extension container for `EventHub` so we can shared and retrieve state
         registerExtension(EventHubPlaceholderExtension.self, completion: { _ in })
+        
+        // Register intelligence preprocessor
+        registerPreprocessor(intelligencePreprocessor.process)
 
         // Setup eventQueue handler for the main OperationOrderer
         eventQueue.setHandler { [weak self] (event) -> Bool in
@@ -115,6 +123,32 @@ final class EventHub {
 
             self.eventHistory = EventHistory()
         }
+    }
+    
+    /// Initializes the intelligence event history and connects it to the preprocessor
+    private func initIntelligenceEventHistory() {
+        eventHubQueue.async { [weak self] in
+            guard let self = self else { return }
+            
+            // Create intelligence event history using the same database connection
+            if let database = (self.eventHistory as? EventHistory)?.database {
+                let intelligenceDB = IntelligenceEventHistoryDatabase(database: database)
+                self.intelligenceEventHistory = IntelligenceEventHistory(database: intelligenceDB)
+                
+                // Connect intelligence history to preprocessor
+                self.intelligencePreprocessor.setIntelligenceHistory(self.intelligenceEventHistory!)
+                
+                Log.debug(label: self.LOG_TAG, "Intelligence event history initialized")
+            } else {
+                Log.warning(label: self.LOG_TAG, "Unable to initialize intelligence event history - event history database not available")
+            }
+        }
+    }
+    
+    /// Updates the intelligence preprocessor configuration
+    /// - Parameter configuration: Dictionary containing intelligence configuration
+    func updateIntelligenceConfiguration(_ configuration: [String: Any]) {
+        intelligencePreprocessor.updateConfiguration(configuration)
     }
 
     /// When this API is invoked the `EventHub` will begin processing `Event`s

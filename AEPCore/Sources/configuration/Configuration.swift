@@ -256,6 +256,8 @@ class Configuration: NSObject, Extension {
         dispatchConfigurationResponse(requestEvent: nil, data: config)
         // notify the rules engine about the change of config
         notifyRulesEngine(newConfiguration: config)
+        // notify the intelligence preprocessor about the change of config
+        notifyIntelligencePreprocessor(newConfiguration: config)
     }
 
     /// Notifies the rules engine about a change in config
@@ -264,5 +266,11 @@ class Configuration: NSObject, Extension {
         if let rulesURLString = newConfiguration[ConfigurationConstants.Keys.RULES_URL] as? String {
             rulesEngine.replaceRules(from: rulesURLString)
         }
+    }
+    
+    /// Notifies the intelligence preprocessor about a change in config
+    /// - Parameter newConfiguration: the current config
+    private func notifyIntelligencePreprocessor(newConfiguration: [String: Any]) {
+        EventHub.shared.updateIntelligenceConfiguration(newConfiguration)
     }
 }
